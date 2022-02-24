@@ -1,5 +1,5 @@
 # FundFlow
-## :money_with_wings: Crowdfunding platform with decentralized blockchain :money_with_wings:
+## :money_with_wings: Crowdfunding platform with cryptocurrency :money_with_wings:
 
 № | Team member | Group
 ---|-------------|-------
@@ -8,16 +8,12 @@
 3 | Plenkin Artem | 19213
 4 | Shatalov Ivan |19214
 
-Our project is an expanding place where people can share their business ideas and startups, turn them into reality thanks to investments from other people who can subsequently earn money on it. Investments will be available only in the form of cryptocurrencies which will allow the creation of a decentralized system in which control over the ecosystem is evenly distributed among many players. 
+Our project is an expanding place where people can share their business ideas and startups, turn them into reality thanks to investments from other people who can subsequently earn money on it. Investments will be available only in the form of cryptocurrencies. 
 
 * *no excessive regulation*
 * *transparent transactions*
 * *fast execution*
-* *no long chain of intermediaries*
-
-This platform will maintain the safety of investments thanks to a well-thought-out regulatory system - smart contracts which means all the terms of the transaction have a programmatic description and clear logic of execution, as well as the condition for the automation and reliability of the execution of contractual relations. 
-
-*// TODO write risks (<= five points)* 
+* *no long chain of intermediaries* 
 
 **MVP will be available: 01.03.22**
 
