@@ -17,5 +17,5 @@
 * [ ] [Backend development]()  
 * [ ] [Frontend development]()  
 
-# MVP (Due date: 01.03.22)
+# MVP (Due date: 01.04.22)
 # Version 1.0 (Due date: 01.09.2022)
