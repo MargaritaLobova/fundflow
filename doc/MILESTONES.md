@@ -1,4 +1,4 @@
-# First draft (Due date: 01.01.22)
+# Second draft (Due date: 28.02.22)
  
  **1. Technical docs:**
 * [ ] [README.MD](https://trello.com/c/7RtLLtwx/15-%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-readmemd) 
@@ -15,7 +15,16 @@
 
 **4. Development:**
 * [ ] [Backend development]()  
+    * [ ] [Handling requests for all pages]()
+    * [ ] [Data Base creation]()
+    * [ ] [Crypto currency connection]()
 * [ ] [Frontend development]()  
+    * [ ] [Registration and authorization page layout]()
+    * [ ] [Main page layout]()
+    * [ ] [Profile layout]()
+    * [ ] [Startup registration layout]()
+    * [ ] [Startup view page layout]()
+    * [ ] [Connecting back-end components]()
 
 # MVP (Due date: 01.04.22)
 # Version 1.0 (Due date: 01.09.2022)
