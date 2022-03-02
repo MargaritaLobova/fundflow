@@ -27,9 +27,8 @@ This document describes high-level architecture of FundFlow crowdfunding platfor
     - Implement RESTful microservice architecture 
 
 ## What we use.
-On our crowdfunding platform investments available only in the form of cryptocurrency so as black-end programming language we use Go lang + Cosmos. <br />
-https://go.dev/ <br />
-https://docs.cosmos.network/ <br />
+For backend we use Java + Swing <br />
+https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html <br />
 For the frontend we use JavaScript + React. <br />
 https://reactjs.org/ <br />
 https://github.com/facebook/react/ <br />
