@@ -3,6 +3,29 @@
 ## What is this?
 This document describes high-level architecture of FundFlow crowdfunding platform.
 
+**Goals and Limitations**
+  - **Basic functional requirements**
+    - User registration
+    - Authorization
+    - Become a backer
+    - Become a founder
+    - create a new project
+    - editing design information
+    - set the name of the project
+    - search by project name
+    - sort projects by category
+    - view popular projects
+    - view my investments
+    - invest
+    - link the wallet to the project
+  - **Basic non-functional requirements**
+    - The web application and the server must respond quickly to user actions.
+    - The web application must ensure the protection of user data and their wallets.
+  - **Architectural goals**
+    - Ability to easily expand the list of project attributes.
+    - Ability to see changes in projects in real time
+    - Implement RESTful microservice architecture 
+
 ## What we use.
 On our crowdfunding platform investments available only in the form of cryptocurrency so as black-end programming language we use Go lang + Cosmos. <br />
 https://go.dev/ <br />
