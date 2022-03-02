@@ -4,12 +4,12 @@
 This document describes high-level architecture of FundFlow crowdfunding platform.
 
 ## What we use.
-On our crowdfunding platform investments available only in the form of cryptocurrency so as black-end programming language we use Go lang + Cosmos.
-https://go.dev/
-https://docs.cosmos.network/
-For the frontend we use JavaScript + React.
-https://reactjs.org/
-https://github.com/facebook/react/
+On our crowdfunding platform investments available only in the form of cryptocurrency so as black-end programming language we use Go lang + Cosmos. <br />
+https://go.dev/ <br />
+https://docs.cosmos.network/ <br />
+For the frontend we use JavaScript + React. <br />
+https://reactjs.org/ <br />
+https://github.com/facebook/react/ <br />
 
 ## Modules
 Here we briefly talk about our programming modules, simply - our architecture.
