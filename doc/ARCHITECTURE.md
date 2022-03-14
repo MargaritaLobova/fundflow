@@ -27,8 +27,8 @@ This document describes high-level architecture of FundFlow crowdfunding platfor
     - Implement RESTful microservice architecture 
 
 ## What we use.
-For backend we use Java + Swing <br />
-https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html <br />
+For backend we use Java + Spring <br />
+https://spring.io/ <br />
 For the frontend we use JavaScript + React. <br />
 https://reactjs.org/ <br />
 https://github.com/facebook/react/ <br />
