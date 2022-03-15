@@ -16,6 +16,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.ldap:spring-ldap-core")
+    implementation("org.springframework.security:spring-security-ldap")
+    implementation("com.unboundid:unboundid-ldapsdk")
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
