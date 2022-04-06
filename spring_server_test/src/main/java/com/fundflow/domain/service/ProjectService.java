@@ -1,23 +1,26 @@
-package com.fundflow.domain;
+package com.fundflow.domain.service;
 
 import com.fundflow.data.dao.repos.ProjectRepo;
 import com.fundflow.data.dao.repos.UserRepo;
 import com.fundflow.data.model.Project;
 import com.fundflow.data.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
 @Service
 public class ProjectService {
-    @Autowired
-    private ProjectRepo projectRepo;
-    @Autowired
-    private UserRepo userRepo;
+
+    private final ProjectRepo projectRepo;
+    private final UserRepo userRepo;
+
+    public ProjectService(ProjectRepo projectRepo, UserRepo userRepo) {
+        this.projectRepo = projectRepo;
+        this.userRepo = userRepo;
+    }
 
     @Transactional
-    public int addProject(String name, String team, String description, int wantedMoney, String token, String category) {
+    public int create(String token, String name, String team, String description, int wantedMoney, String category) {
         User founder = userRepo.findByToken(token);
         Project project = new Project(name, team, description, wantedMoney, founder, category);
         projectRepo.save(project);
@@ -25,15 +28,14 @@ public class ProjectService {
     }
 
     @Transactional
-    public int renameProject(String newName, int id, String token) {
-        Project project = projectRepo.findById(id);
+    public void rename(String token, int id, String newName) {
         User user = userRepo.findByToken(token);
+        Project project = projectRepo.findById(id);
         if (user != project.getFounder()) {
             throw new IllegalArgumentException("Access denied");
         } else {
             project.setProjectName(newName);
             projectRepo.save(project);
-            return project.getId();
         }
     }
 }

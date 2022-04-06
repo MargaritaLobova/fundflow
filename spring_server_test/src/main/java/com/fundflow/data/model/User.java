@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @Table(name = "user_info")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,9 +28,11 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, String password) {
-        setUsername(username);
-        setEmail(email);
-        setPassword(password);
+    public User(String username, String email, String password, String token) {
+        this.username = username;
+        this.email = email;
+        // TODO: Save only password hash
+        this.password = password;
+        this.token = token;
     }
 }

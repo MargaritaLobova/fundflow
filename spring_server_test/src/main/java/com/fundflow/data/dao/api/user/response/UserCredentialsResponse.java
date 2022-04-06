@@ -1,9 +1,10 @@
-package com.fundflow.data.dao.repos.data.user;
+package com.fundflow.data.dao.api.user.response;
 
 import lombok.Value;
 
 @Value
-public class UserResponse {
+public class UserCredentialsResponse {
+
     String token;
     String status;
     String message;
