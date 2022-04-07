@@ -3,7 +3,7 @@ package com.fundflow.data.dao.api.project.response;
 import lombok.Value;
 
 @Value
-public class ProjectInfoResponse {
+public class CreateProjectResponse {
 
     int id;
     String status;

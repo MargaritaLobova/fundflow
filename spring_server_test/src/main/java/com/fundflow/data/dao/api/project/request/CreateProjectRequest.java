@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ProjectInfoRequest {
+public class CreateProjectRequest {
 
     private String name;
     private String teamName;

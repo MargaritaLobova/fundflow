@@ -1,8 +1,8 @@
 package com.fundflow.data.dao.api.project;
 
 import com.fundflow.data.dao.api.project.request.RenameProjectRequest;
-import com.fundflow.data.dao.api.project.request.ProjectInfoRequest;
-import com.fundflow.data.dao.api.project.response.ProjectInfoResponse;
+import com.fundflow.data.dao.api.project.request.CreateProjectRequest;
+import com.fundflow.data.dao.api.project.response.CreateProjectResponse;
 import com.fundflow.data.dao.api.project.response.RenameProjectResponse;
 import com.fundflow.domain.service.ProjectService;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +19,9 @@ public class ProjectController {
     }
 
     @PostMapping("/create")
-    public ProjectInfoResponse create(
+    public CreateProjectResponse create(
             @RequestHeader(name = "Authorization") String token,
-            @RequestBody ProjectInfoRequest request
+            @RequestBody CreateProjectRequest request
     ) {
         var id = projectService.create(
                 token,
@@ -31,7 +31,7 @@ public class ProjectController {
                 request.getWantedMoney(),
                 request.getCategory()
         );
-        return new ProjectInfoResponse(
+        return new CreateProjectResponse(
                 id,
                 "OK",
                 "Publication was added successfully"
@@ -44,7 +44,7 @@ public class ProjectController {
             @RequestBody RenameProjectRequest request
     ) {
 
-        projectService.rename(request.getNewName(), request.getId(), token);
+        projectService.rename(token, request.getId(), request.getNewName());
         return new RenameProjectResponse("OK", "Publication was renamed successfully");
     }
 }
