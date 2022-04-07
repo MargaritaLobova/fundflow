@@ -8,6 +8,7 @@ import com.fundflow.domain.service.ProjectService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1/project")
 @CrossOrigin(originPatterns = "*", allowCredentials = "true")
 public class ProjectController {
 
@@ -17,9 +18,9 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @PostMapping("/api/v1/add-proj")
+    @PostMapping("/create")
     public ProjectInfoResponse create(
-            @RequestHeader(name = "User") String token,
+            @RequestHeader(name = "Authorization") String token,
             @RequestBody ProjectInfoRequest request
     ) {
         var id = projectService.create(
@@ -37,9 +38,9 @@ public class ProjectController {
         );
     }
 
-    @PostMapping("/api/v1/rename-proj")
+    @PostMapping("/rename")
     public RenameProjectResponse rename(
-            @RequestHeader(name = "User") String token,
+            @RequestHeader(name = "Authorization") String token,
             @RequestBody RenameProjectRequest request
     ) {
 
