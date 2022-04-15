@@ -27,7 +27,7 @@ import Footer from '../Footer/Footer';
 import CardsList from '../CardsList/CardsList';
 import FeaturedProject from '../FeaturedProject/FeaturedProject';
 import LatestProject from '../LatestProject/LatestProject';
-
+import Log from '../Log/Log';
 
 function App() {
 
@@ -113,6 +113,151 @@ function App() {
       <BrowserRouter>
 
         <Switch>
+
+          <Route path="/games">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Games'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/art">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Art'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/tech">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Technology'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/film">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Film'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/music">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+
+            />
+            <CardsList
+              articles={articles}
+              title={'Music'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/pub">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Publishing'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/design">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Design'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/mostpopular">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Most Popular'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/juststarted">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'Just Started'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/newprojects">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <CardsList
+              articles={articles}
+              title={'New Projects'}
+              handleClick={handleClick}
+            />
+            <Footer />
+          </Route>
+
+          <Route path="/login">
+            <Header
+              isGrey={true}
+              isLogged={isLogged}
+            />
+            <Log
+              handleLogIn={handleLogin}
+              handleSignUp={handleSignup}
+            />
+            <Footer
+              isGrey={true}
+            />
+          </Route>
 
           <Route path="/">
             <Header
