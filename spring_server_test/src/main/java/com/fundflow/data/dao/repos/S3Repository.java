@@ -21,8 +21,7 @@ public class S3Repository {
         client = AmazonS3ClientBuilder
                 .standard()
                 .withCredentials(new AWSStaticCredentialsProvider(credentials.getAwsCredentials()))
-                // TODO: Change region
-                .withRegion(Regions.US_EAST_2)
+                .withRegion(Regions.fromName(credentials.getBucketRegionName()))
                 .build();
 
         bucketName = credentials.getBucketName();

@@ -8,4 +8,5 @@ public class S3Credentials {
 
     BasicAWSCredentials awsCredentials;
     String bucketName;
+    String bucketRegionName;
 }

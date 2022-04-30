@@ -7,15 +7,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AwsStorageConfig {
 
+    private final AwsConfigProperties properties;
+
+    public AwsStorageConfig(AwsConfigProperties properties) {
+        this.properties = properties;
+    }
+
     @Bean(name = "awsCredentials")
     public S3Credentials credentials() {
         return new S3Credentials(
-                // TODO: Get credentials from props
                 new BasicAWSCredentials(
-                        "<AWS accesskey>",
-                        "<AWS secretkey>"
+                        properties.getAccessKey(),
+                        properties.getPrivateKey()
                 ),
-                ""
+                properties.getBucketName(),
+                properties.getBucketRegionName()
         );
     }
 }
