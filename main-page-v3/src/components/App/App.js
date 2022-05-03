@@ -27,6 +27,7 @@ import Footer from '../Footer/Footer';
 import CardsList from '../CardsList/CardsList';
 import FeaturedProject from '../FeaturedProject/FeaturedProject';
 import LatestProject from '../LatestProject/LatestProject';
+import Project from '../Project/Project';
 import Log from '../Log/Log';
 
 function App() {
@@ -259,6 +260,18 @@ function App() {
             />
           </Route>
 
+          <Route path="/project/:id">
+            <Header
+              isGrey={false}
+              isLogged={isLogged}
+            />
+            <Project
+              card={cardId}
+              updateCard={updateCard}
+            />
+            <Footer />
+          </Route>
+
           <Route path="/">
             <Header
               isGrey={false}
@@ -269,6 +282,7 @@ function App() {
               isLogged={isLogged}
 
             />
+
             <FeaturedProject
               news={news}
               featuredCard={featuredCard}
