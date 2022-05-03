@@ -5,6 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import './Project.css';
 
 import CardsBar from '../CardsBar/CardsBar';
+import ProgressBar from '../ProgressBar/ProgressBar';
+
 
 import price from '../../images/priceBlack.svg';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
@@ -45,6 +47,10 @@ function Project(props) {
                         <img className='project__wallet' src={price} alt="" />
                     </div>
                     <p className='project__prePrice'>{`from ${props.card.prePrice} contributed`}</p>
+                    <ProgressBar
+                        completed={comp}
+                    />
+
                     {
                         props.card.owner === currentUser.id ?
                             <button disabled onClick={onClick} className='project__button'>Contribute</button> :
