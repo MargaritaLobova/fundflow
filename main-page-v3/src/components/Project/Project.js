@@ -7,6 +7,7 @@ import './Project.css';
 import CardsBar from '../CardsBar/CardsBar';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
+
 import price from '../../images/priceBlack.svg';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 
@@ -49,6 +50,7 @@ function Project(props) {
                     <ProgressBar
                         completed={comp}
                     />
+
                     {
                         props.card.owner === currentUser.id ?
                             <button disabled onClick={onClick} className='project__button'>Contribute</button> :
