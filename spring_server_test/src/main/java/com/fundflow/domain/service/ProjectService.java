@@ -22,7 +22,7 @@ public class ProjectService {
     @Transactional
     public int create(String token, String name, String team, String description, int wantedMoney, String category) {
         User founder = userRepo.findByToken(token);
-        Project project = new Project(name, team, description, wantedMoney, founder, category);
+        Project project = new Project(name, team, description, wantedMoney, category, founder);
         projectRepo.save(project);
         return projectRepo.findByProjectName(name).getId();
     }

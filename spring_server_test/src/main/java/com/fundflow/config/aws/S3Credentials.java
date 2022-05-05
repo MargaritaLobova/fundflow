@@ -1,12 +1,28 @@
 package com.fundflow.config.aws;
 
 import com.amazonaws.auth.BasicAWSCredentials;
-import lombok.Value;
 
-@Value
 public class S3Credentials {
 
-    BasicAWSCredentials awsCredentials;
-    String bucketName;
-    String bucketRegionName;
+    private final BasicAWSCredentials awsCredentials;
+    private final String bucketName;
+    private final String bucketRegionName;
+
+    public S3Credentials(BasicAWSCredentials awsCredentials, String bucketName, String bucketRegionName) {
+        this.awsCredentials = awsCredentials;
+        this.bucketName = bucketName;
+        this.bucketRegionName = bucketRegionName;
+    }
+
+    public BasicAWSCredentials getAwsCredentials() {
+        return awsCredentials;
+    }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public String getBucketRegionName() {
+        return bucketRegionName;
+    }
 }

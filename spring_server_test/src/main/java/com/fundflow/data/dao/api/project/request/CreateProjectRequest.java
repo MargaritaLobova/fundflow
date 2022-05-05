@@ -1,10 +1,5 @@
 package com.fundflow.data.dao.api.project.request;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class CreateProjectRequest {
 
     private String name;
@@ -12,4 +7,44 @@ public class CreateProjectRequest {
     private String description;
     private int wantedMoney;
     private String category;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getWantedMoney() {
+        return wantedMoney;
+    }
+
+    public void setWantedMoney(int wantedMoney) {
+        this.wantedMoney = wantedMoney;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
