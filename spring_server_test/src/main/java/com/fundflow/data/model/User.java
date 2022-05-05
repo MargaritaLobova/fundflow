@@ -13,16 +13,25 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(unique = true, nullable = false)
     private String username;
+
     @Column(unique = true, nullable = false)
     private String email;
+
     @Column(nullable = false)
     private String password;
     private String token;
-    @OneToMany
+
+    @OneToMany(mappedBy = "founder")
     private List<Project> usersProjects;
-    @OneToMany
+
+    @ManyToMany
+    @JoinTable(
+            name = "project_backers",
+            joinColumns = @JoinColumn(name = "backer_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
     private List<Project> investedProjects;
 
     public User() {
