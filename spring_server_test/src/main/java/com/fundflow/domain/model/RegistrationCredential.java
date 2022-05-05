@@ -1,17 +1,26 @@
 package com.fundflow.domain.model;
 
-import lombok.Data;
-import lombok.NonNull;
-
-@Data
 public class RegistrationCredential {
 
-    @NonNull
-    private String username;
+    private final String username;
+    private final String email;
+    private final String password;
 
-    @NonNull
-    private String email;
+    public RegistrationCredential(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
-    @NonNull
-    private String password;
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
