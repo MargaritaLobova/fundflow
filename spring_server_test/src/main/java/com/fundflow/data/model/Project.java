@@ -2,6 +2,7 @@ package com.fundflow.data.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "project")
@@ -105,5 +106,37 @@ public class Project {
 
     public void setBackers(List<User> backers) {
         this.backers = backers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Project)) return false;
+
+        Project project = (Project) o;
+
+        if (id != project.id) return false;
+        if (wantedMoney != project.wantedMoney) return false;
+        if (!projectName.equals(project.projectName)) return false;
+        if (!teamName.equals(project.teamName)) return false;
+        if (!Objects.equals(description, project.description))
+            return false;
+        if (!Objects.equals(category, project.category))
+            return false;
+        if (!founder.equals(project.founder)) return false;
+        return Objects.equals(backers, project.backers);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + projectName.hashCode();
+        result = 31 * result + teamName.hashCode();
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + wantedMoney;
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + founder.hashCode();
+        result = 31 * result + (backers != null ? backers.hashCode() : 0);
+        return result;
     }
 }

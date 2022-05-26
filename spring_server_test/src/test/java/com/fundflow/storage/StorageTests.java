@@ -1,4 +1,4 @@
-package com.fundflow;
+package com.fundflow.storage;
 
 import com.fundflow.data.dao.repos.S3Repository;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 @SpringBootTest
-class FundflowApplicationTests {
+class StorageTests {
 
     @Autowired
     private S3Repository repository;

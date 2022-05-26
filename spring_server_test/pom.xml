@@ -68,6 +68,12 @@
             <artifactId>aws-java-sdk</artifactId>
             <version>1.12.104</version>
         </dependency>
+
+        <!-- In memory db -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
