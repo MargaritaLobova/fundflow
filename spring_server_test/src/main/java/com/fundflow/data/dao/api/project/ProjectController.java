@@ -3,6 +3,7 @@ package com.fundflow.data.dao.api.project;
 import com.fundflow.data.dao.api.project.request.RenameProjectRequest;
 import com.fundflow.data.dao.api.project.request.CreateProjectRequest;
 import com.fundflow.data.dao.api.project.response.CreateProjectResponse;
+import com.fundflow.data.dao.api.project.response.GetAllProjectsResponse;
 import com.fundflow.data.dao.api.project.response.RenameProjectResponse;
 import com.fundflow.domain.service.ProjectService;
 import org.springframework.web.bind.annotation.*;
@@ -46,5 +47,13 @@ public class ProjectController {
 
         projectService.rename(token, request.getId(), request.getNewName());
         return new RenameProjectResponse("OK", "Publication was renamed successfully");
+    }
+
+    @GetMapping("/all")
+    public GetAllProjectsResponse getAll() {
+        return new GetAllProjectsResponse(
+            "OK",
+            projectService.getAll()
+        );
     }
 }

@@ -4,6 +4,7 @@ import com.fundflow.data.dao.repos.ProjectRepo;
 import com.fundflow.data.dao.repos.UserRepo;
 import com.fundflow.data.model.Project;
 import com.fundflow.data.model.User;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -37,5 +38,9 @@ public class ProjectService {
             project.setProjectName(newName);
             projectRepo.save(project);
         }
+    }
+
+    public List<Project> getAll() {
+        return projectRepo.getAllBy();
     }
 }
