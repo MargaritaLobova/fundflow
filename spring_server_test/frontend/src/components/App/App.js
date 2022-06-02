@@ -3,15 +3,12 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link,
   useHistory
 } from 'react-router-dom';
-import * as Scroll from 'react-scroll';
 import { Button, Element, Events, scrollSpy, scroller } from 'react-scroll';
 
 import './App.css';
 
-import articlesData from '../../data/data.js';
 import news from '../../data/news';
 import acc from '../../data/acc';
 
@@ -31,7 +28,6 @@ import LatestProject from '../LatestProject/LatestProject';
 import Project from '../Project/Project';
 import Log from '../Log/Log';
 import {ProjectService} from "../../service/ProjectService";
-import data from "../../data/data.js";
 import im1 from "../../images/title_im.png";
 
 function App() {
@@ -139,7 +135,6 @@ function App() {
       <BrowserRouter>
 
         <Switch>
-
           <Route path="/games">
             <Header
               isGrey={false}
@@ -239,7 +234,7 @@ function App() {
             />
             <CardsList
               articles={articles}
-              title={'Most Popular'}
+              title={null}
               handleClick={handleClick}
             />
             <Footer />
@@ -252,7 +247,7 @@ function App() {
             />
             <CardsList
               articles={articles}
-              title={'Just Started'}
+              title={null}
               handleClick={handleClick}
             />
             <Footer />
@@ -265,7 +260,7 @@ function App() {
             />
             <CardsList
               articles={articles}
-              title={'New Projects'}
+              title={null}
               handleClick={handleClick}
             />
             <Footer />

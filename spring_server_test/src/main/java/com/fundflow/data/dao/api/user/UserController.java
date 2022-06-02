@@ -20,14 +20,20 @@ public class UserController {
     @PostMapping("/api/v1/register")
     public UserCredentialsResponse registerUser(@RequestBody UserRegistrationRequest registerRequest) {
         var credential = registerRequestToRegistrationCredentials(registerRequest);
-        var token = userService.registerUser(credential);
-        return new UserCredentialsResponse(token, "OK", "User was registered successfully");
+        var user = userService.registerUser(credential);
+        var token = user.getToken();
+        var username = user.getUsername();
+        return new UserCredentialsResponse(token, "OK", "User was registered successfully",
+            username);
     }
 
     @PostMapping("/api/v1/auth")
     public UserCredentialsResponse authoriseUser(@RequestBody UserAuthorizationRequest authenticationRequest) {
-        var token = userService.authorizeUser(authenticationRequest.getEmail(), authenticationRequest.getPassword());
-        return new UserCredentialsResponse(token, "OK", "User was authorized successfully");
+        var user = userService.authorizeUser(authenticationRequest.getEmail(), authenticationRequest.getPassword());
+        var token = user.getToken();
+        var username = user.getUsername();
+        return new UserCredentialsResponse(token, "OK", "User was authorized successfully",
+            username);
     }
 
     @PostMapping("/api/v1/out")
@@ -37,7 +43,7 @@ public class UserController {
 
     private RegistrationCredential registerRequestToRegistrationCredentials(UserRegistrationRequest request) {
         return new RegistrationCredential(
-                request.getUsername(),
+            request.getEmail(),
                 request.getEmail(),
                 request.getPassword()
         );

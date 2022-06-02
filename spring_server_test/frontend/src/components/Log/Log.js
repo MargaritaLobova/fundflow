@@ -3,6 +3,7 @@ import './Log.css';
 import { Link } from 'react-router-dom';
 
 import { CurrentUserContext } from '../../context/CurrentUserContext';
+import {UserService} from "../../service/UserService";
 
 const Log = (props) => {
     const currentUser = React.useContext(CurrentUserContext);
@@ -12,7 +13,7 @@ const Log = (props) => {
     });
 
     const [dataConf, setDataConf] = React.useState({
-        confemail: currentUser.email,
+        confemail: '',
         cpassword: '',
         confpass: ''
     })
@@ -40,21 +41,28 @@ const Log = (props) => {
         e.preventDefault();
         console.log(data);
         if (data.email !== '' && cpassword.password !== ''  && confpass.password !== '') {
-            if (cpassword.password === confpass.password ) {
+            UserService.getUser({email: data.email, password: data.password}).then((data) => {
+                if (data === "OK")
+                    props.handleLogIn(data);
+            })
+            /*if (cpassword.password === confpass.password ) {
                 props.handleLogIn(data);
             } else {
                 console.log('passwords are not the same');
-            }
+            }*/
         } else {
             console.log('enter data');
         }
     }
 
     function handleSignUp(e) {
-        console.log(data);
-        if (confemail.email !== '' && data.password !== '') {
-            props.handleLogIn(data);
+        if (dataConf.confemail !== '' && dataConf.cpassword !== '') {
+            UserService.createUser({email: dataConf.confemail, password: dataConf.confpass}).then((response) => {
+                if (response === "OK")
+                    props.handleLogIn(dataConf);
+            })
         } else {
+            console.log(dataConf);
             console.log('enter data');
         }
         e.preventDefault();
@@ -99,28 +107,28 @@ const Log = (props) => {
                 <form className='form' onSubmit={handleSignUp}>
                     <p className='form__title'>Sign up</p>
                     <input 
-                        value={confemail} 
-                        onChange={handleChangeConf} 
+                        value={confemail}
+                        onChange={handleChangeConf}
                         id="email1-input-login"
-                        name="confemail" 
+                        name="confemail"
                         className="form__input form__input_el_email" 
                         type="email" 
                         placeholder="Email address"
                     />
                     <input 
-                        value={cpassword} 
-                        onChange={handleChangeConf} 
+                        value={cpassword}
+                        onChange={handleChangeConf}
                         id="password1-input-login" 
-                        name="cpassword" 
+                        name="cpassword"
                         className="form__input form__input_el_pass" 
                         type="password" 
                         placeholder="Password"
                     />
                     <input 
-                        value={confpass} 
-                        onChange={handleChangeConf} 
+                        value={confpass}
+                        onChange={handleChangeConf}
                         id="password1-input-login" 
-                        name="confpass" 
+                        name="confpass"
                         className="form__input form__input_el_pass" 
                         type="password" 
                         placeholder="Confirm password"

@@ -18,7 +18,7 @@ public class UserService {
     }
 
     @Transactional
-    public String registerUser(RegistrationCredential credential) {
+    public User registerUser(RegistrationCredential credential) {
         if (userRepo.findByEmail(credential.getEmail()) != null) {
             throw new IllegalArgumentException("You are already registered!");
         } else {
@@ -30,12 +30,12 @@ public class UserService {
                     getRandomString()
             );
             userRepo.save(user);
-            return user.getToken();
+            return user;
         }
     }
 
     @Transactional
-    public String authorizeUser(String email, String password) {
+    public User authorizeUser(String email, String password) {
         User user = userRepo.findByEmail(email);
         if (user == null) {
             throw new IllegalArgumentException("There is no such a user with such an email!");
@@ -45,7 +45,7 @@ public class UserService {
                 var token = getRandomString();
                 user.setToken(token);
                 userRepo.save(user);
-                return token;
+                return user;
             } else {
                 throw new IllegalArgumentException("Not correct password");
             }
