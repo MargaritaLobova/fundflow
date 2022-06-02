@@ -1,0 +1,126 @@
+@font-face {
+    src: url('../../fonts/Montserrat-Bold.woff') format('woff');
+    font-family: 'Montserrat-Bold';
+}
+
+@font-face {
+    src: url('../../fonts/Montserrat-Regular.woff') format('woff');
+    font-family: 'Montserrat';
+}
+
+
+.bec {
+    background: linear-gradient(90deg, #018BAF 0%, #35B4C2 100%);
+    width: 100%;
+}
+.become {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.become__middle {
+    justify-items: center;
+}
+
+.become__content {
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: inherit;
+}
+
+.become__title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat-Bold';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 51px;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+}
+
+.become__text {
+    margin: 0;
+    padding: 0;
+    font-family: 'Monda';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 41px;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+.become__button {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 32px;
+    background-color: transparent;
+    height: 57px;
+    width: 246px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.become__left {
+    width: 410px;
+    display: flex;
+    flex-direction: row;
+}
+.become__right {
+    width: 410px;
+    display: flex;
+    flex-direction: row;
+}
+
+.become__title_yellow {
+    color: #F6D90F;
+}
+
+.become__text_dark {
+    color: #276961
+}
+
+.become__bRock {
+    position: relative;
+    left: 30px
+}
+
+.become__pbRock {
+    position: relative;
+    right: 0px;  
+    bottom: 40px;
+    height: 250px;
+    width: auto;
+}
+
+.become__mRoc {
+    position: relative;
+    right: 50px; 
+    bottom: -80px;
+    height: 200px;
+    width: auto;
+}
+
+.become__sRoc {
+    position: relative;
+    right: 50px; 
+    bottom: 20px;
+    height: 150px;
+    width: auto;
+}
