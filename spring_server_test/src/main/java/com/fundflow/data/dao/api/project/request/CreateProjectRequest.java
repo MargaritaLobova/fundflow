@@ -1,5 +1,8 @@
 package com.fundflow.data.dao.api.project.request;
 
+import com.fundflow.data.model.User;
+import java.util.List;
+
 public class CreateProjectRequest {
 
     private String name;
@@ -7,6 +10,16 @@ public class CreateProjectRequest {
     private String description;
     private int wantedMoney;
     private String category;
+
+    private List<User> backers;
+
+    public List<User> getBackers() {
+        return backers;
+    }
+
+    public void setBackers(List<User> backers) {
+        this.backers = backers;
+    }
 
     public String getName() {
         return name;

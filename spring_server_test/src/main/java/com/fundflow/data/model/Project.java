@@ -39,13 +39,15 @@ public class Project {
     public Project() {
     }
 
-    public Project(String projectName, String teamName, String description, int wantedMoney, String category, User founder) {
+    public Project(String projectName, String teamName, String description, int wantedMoney, String category
+        , User founder, List<User> backers) {
         this.projectName = projectName;
         this.teamName = teamName;
         this.description = description;
         this.wantedMoney = wantedMoney;
         this.category = category;
         this.founder = founder;
+        this.backers = backers;
     }
 
     public int getId() {

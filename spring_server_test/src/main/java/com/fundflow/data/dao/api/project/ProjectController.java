@@ -19,7 +19,7 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @PostMapping("/create")
+    @PutMapping("/create")
     public CreateProjectResponse create(
             @RequestHeader(name = "Authorization") String token,
             @RequestBody CreateProjectRequest request
@@ -30,7 +30,8 @@ public class ProjectController {
                 request.getTeamName(),
                 request.getDescription(),
                 request.getWantedMoney(),
-                request.getCategory()
+                request.getCategory(),
+            request.getBackers()
         );
         return new CreateProjectResponse(
                 id,
