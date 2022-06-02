@@ -12,8 +12,8 @@ const CardsBar = (props) => {
             <Carousel cols={4} rows={1} gap={19} >
                 {
                     props.articles.map((card) => 
-                        <Carousel.Item>
-                            <Card 
+                        <Carousel.Item key={card.id}>
+                            <Card key={card.id}
                                 id = {card.id}
                                 photo_link = {card.photo_link}
                                 title = {card.title}

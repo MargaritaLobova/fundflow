@@ -7,7 +7,7 @@ import {
   useHistory
 } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
-import { Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Button, Element, Events, scrollSpy, scroller } from 'react-scroll';
 
 import './App.css';
 
@@ -30,10 +30,8 @@ import FeaturedProject from '../FeaturedProject/FeaturedProject';
 import LatestProject from '../LatestProject/LatestProject';
 import Project from '../Project/Project';
 import Log from '../Log/Log';
-import ProjectType from "../Project/ProjectType";
 import {ProjectService} from "../../service/ProjectService";
 import data from "../../data/data.js";
-import projectType from "../Project/ProjectType";
 import im1 from "../../images/title_im.png";
 
 function App() {
@@ -44,8 +42,8 @@ function App() {
   const [cardId, setCardId] = React.useState({});
   const [upCard, setUpCard] = React.useState({});
   const [updateBool, setUpdateBool] = React.useState(false);
-  const [featuredCard, setFeaturedCard] = React.useState(articlesData[1]);
-  const [latestProject, setLatestProject] = React.useState(articlesData[0]);
+  const [featuredCard, setFeaturedCard] = React.useState({});
+  const [latestProject, setLatestProject] = React.useState({});
   const history = useHistory();
 
   React.useEffect(() => {
@@ -53,8 +51,9 @@ function App() {
     ProjectService.getProjects().then((data) => {
       const article = transformToProjectType(data)
       setArticles(article)
+      setFeaturedCard(article[1])
+      setLatestProject(article[0])
     })
-    //setArticles(articlesData);
   }, [])
 
   function transformToProjectType(data) {
@@ -100,7 +99,7 @@ function App() {
   function handleSignup(userDataIn) {
     setCurrentUser(userDataIn);
     setIsLogged(true);
-    console.log('You reged and entered the site!');
+    console.log('You registered and entered the site!');
   }
 
   function handleChangeAccount(dataPhoto, data) {
@@ -111,7 +110,7 @@ function App() {
   }
 
   function newCard(data) {
-    console.log('You huploaded a new card:');
+    console.log('You uploaded a new card:');
     console.log(data);
   }
 
@@ -316,6 +315,7 @@ function App() {
             />
             <LatestProject
               latestProject={latestProject}
+              handleClick={handleClick}
             />
             <MostPopular
               articles={articles}

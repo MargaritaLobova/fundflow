@@ -13,7 +13,7 @@ import { propTypes } from 'react-grid-carousel';
 function Become(props) {
 
     return (
-        <div class="bec">
+        <div className="bec">
         <div className='become'>
             <div className='become__right'>
                 <img className='become__pbRock' src={rock2} alt="" />

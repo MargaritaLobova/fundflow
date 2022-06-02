@@ -12,7 +12,7 @@ const LittleCardsBar = (props) => {
                 {
                     props.articles.map((card) => 
                         currentUser.id === card.owner ?
-                        <LittleCard 
+                        <LittleCard key={card.id}
                             photo_link = {card.photo_link}
                             title = {card.title}
                             text = {card.text}

@@ -10,7 +10,7 @@ const CardsList = (props) => {
         <div className='listt__cards'>
           {
             props.articles.map((card) => {
-              return <Card
+              return <Card key={card.id}
                 id={card.id}
                 photo_link={card.photo_link}
                 title={card.title}

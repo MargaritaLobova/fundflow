@@ -17,7 +17,7 @@ const ControlContainer = styled.ul`
 
 export const ControlItem = styled.li`
   list-style-type: none;
-  font-family: Montserrat-Bold    
+  font-family: Montserrat-Bold;    
   padding: 10px;
   border: 0;
   font-weight: 700;
@@ -43,35 +43,36 @@ const PaginatedListContainer = styled.div`
 
 function RightBar(props) {
 
-    return (
-        <div className='right'>
-            <p className='right__title'>Recommended for you</p>
-            <div className='right__pages'>
-                <PaginatedList
-                    list = {props.news}
-                    itemsPerPage={4}
-                    renderList={(list) => (
-                        <>
-                            {list.map((item) => {
-                                return (
-                                    
-                                        <NewsCard
-                                            card = {item}
-                                        />
-                                    
-                                );
-                            })}
-                        </>
-                    )}
-                    nextClass = {'>'}
-                    prevClass = {'<'}
-                    ControlContainer = {ControlContainer}
-                    ControlItem = {ControlItem}
-                />
-            </div>
-        </div>
-        
-    );
+  return (
+    <div className='right'>
+      <p className='right__title'>Recommended for you</p>
+      <div className='right__pages'>
+        <PaginatedList
+          list={props.news}
+          itemsPerPage={4}
+          renderList={(list) => (
+            <>
+              {list.map((item) => {
+                return (
+
+                  <NewsCard
+                    key={item.id}
+                    card={item}
+                  />
+
+                );
+              })}
+            </>
+          )}
+          nextClass={'>'}
+          prevClass={'<'}
+          ControlContainer={ControlContainer}
+          ControlItem={ControlItem}
+        />
+      </div>
+    </div>
+
+  );
 }
 
 export default RightBar;

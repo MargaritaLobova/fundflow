@@ -11,6 +11,7 @@ function LatestProject(props) {
             <div className='containerL__content'>
                 <LeftBarL 
                     latestProject = {props.latestProject}
+                    handleClick = {props.handleClick}
                 />
             </div>
         </div>

@@ -5,7 +5,6 @@ import RightBar from '../RightBar/RightBar.js';
 import LeftBar from '../LeftBar/LeftBar.js';
 
 function FeaturedProject(props) {
-
     return (
         <div className='container'>
             <div className='container__content'>
